@@ -1,5 +1,34 @@
-// 🎯 Classe base correta: Agora TODOS os carros podem acelerar, mas abastecer é específico!
-abstract class Carro {
+/**
+ * 🚀 Aplicação correta do Princípio da Substituição de Liskov (LSP - Liskov Substitution Principle)
+ *
+ * Este código implementa corretamente **herança e polimorfismo**, respeitando o **Princípio da Substituição de Liskov (LSP)**.
+ * O LSP garante que qualquer subclasse possa ser substituída por sua classe base **sem quebrar o comportamento esperado**.
+ *
+ * 🔹 **O que foi corrigido aqui?**
+ *    - Criamos a classe abstrata `Carro`, garantindo que TODOS os carros podem **acelerar**.
+ *    - Criamos subtipos especializados:
+ *      - `CarroCombustivel`: Para carros que precisam de abastecimento.
+ *      - `CarroEletrico`: Para carros que precisam carregar bateria.
+ *    - Agora um carro **elétrico não pode ser abastecido com gasolina**, evitando erros.
+ *
+ * 🔹 **Benefícios dessa abordagem:**
+ * 1️⃣ **Respeito ao LSP**  
+ *     - Qualquer `Carro` pode participar da `Corrida`, pois **todos implementam o método `acelerar()` corretamente**.
+ *
+ * 2️⃣ **Evita comportamentos inesperados**  
+ *     - Se usássemos um carro elétrico em um código que chamasse `abastecer()`, **o código quebraria**.
+ *     - Agora, o tipo correto (`CarroEletrico`) define **um método específico `carregarBateria()`**.
+ *
+ * 3️⃣ **Código mais flexível e reutilizável**  
+ *     - Se quisermos adicionar novos tipos de carro (ex: híbridos), podemos fazê-lo sem modificar código existente.
+ *
+ * 🔹 **O que aconteceria sem essa estrutura?**
+ *    - Se `Carro` tivesse um método `abastecer()`, **os carros elétricos seriam forçados a implementar um método que não faz sentido**.
+ *    - Isso causaria erros e violaria o **LSP**, tornando o código inconsistente.
+ */
+
+ // 🎯 Classe base correta: Agora TODOS os carros podem acelerar, mas abastecer é específico!
+ abstract class Carro {
   abstract void acelerar();
 }
 

@@ -1,5 +1,24 @@
-// Classe base de um carro
-class Carro {
+/**
+ * 🚨 Problema: Violação do Princípio da Substituição de Liskov (LSP - Liskov Substitution Principle)
+ *
+ * Este código **viola o LSP**, pois `CarroEletrico` herda de `Carro`, mas **não pode ser tratado corretamente como um `Carro`**.
+ * O LSP diz que **qualquer subclasse deve poder substituir sua superclasse sem alterar o comportamento esperado**.
+ *
+ * 🔴 **Por que isso é um problema?**
+ * 1️⃣ `CarroEletrico` herda o método `abastecer()`, mas **não deveria ter esse método**.
+ * 2️⃣ A tentativa de chamar `abastecer()` em `CarroEletrico` **gera uma exceção (`UnsupportedOperationException`)**.
+ * 3️⃣ Isso viola o conceito de **Herança Correta**, pois a classe filha (`CarroEletrico`) não pode ser usada corretamente no lugar da classe base (`Carro`).
+ *
+ * 🔹 **Solução correta**:
+ *    - Criar uma **classe base `Carro` mais genérica**, contendo apenas `acelerar()`.
+ *    - Criar **duas subclasses específicas**:
+ *      - `CarroCombustivel` (com `abastecer()`).
+ *      - `CarroEletrico` (com `carregarBateria()`).
+ *    - Assim, evitamos que carros elétricos tenham um método que não faz sentido.
+ */
+
+ // Classe base de um carro
+ class Carro {
   void acelerar() {
       System.out.println("O carro está acelerando!");
   }

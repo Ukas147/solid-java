@@ -1,3 +1,23 @@
+/**
+ * Abstração, Herança e Polimorfismo em Java
+ *
+ * Este código demonstra os princípios fundamentais da Programação Orientada a Objetos (POO):
+ *
+ * 🔹 **Abstração (`Veiculo`)**:
+ *    - A classe `Veiculo` é **abstrata**, o que significa que **não pode ser instanciada diretamente**.
+ *    - Contém um método abstrato `mover()`, que **deve ser implementado** por todas as subclasses.
+ *
+ * 🔹 **Herança**:
+ *    - `Carro` e `Bicicleta` são subclasses que herdam da superclasse `Veiculo`.
+ *    - Ambas aproveitam o atributo `modelo` e o método `exibirModelo()`, definidos na superclasse.
+ *
+ * 🔹 **Polimorfismo**:
+ *    - Criamos objetos das subclasses (`Carro` e `Bicicleta`) usando referências do tipo `Veiculo`.
+ *    - Quando chamamos `mover()`, cada objeto executa sua **própria versão** do método, demonstrando **polimorfismo dinâmico**.
+ *
+ * O código cria e manipula veículos de forma genérica, permitindo flexibilidade e reutilização.
+ */
+
 // Classe abstrata (não pode ser instanciada diretamente)
 abstract class Veiculo {
   protected String modelo;
@@ -43,7 +63,7 @@ class Bicicleta extends Veiculo {
 // Classe principal (Main)
 // public class Main {
 //   public static void main(String[] args) {
-//       // Criando objetos das subclasses
+//       // Criando objetos das subclasses usando polimorfismo
 //       Veiculo carro = new Carro("Ferrari");
 //       Veiculo bicicleta = new Bicicleta("Caloi");
 

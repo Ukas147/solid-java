@@ -1,5 +1,30 @@
-// 🎯 Interface correta: Apenas habilidades específicas!
-interface Animal {
+/**
+ * 🚀 Aplicação correta do Princípio da Segregação de Interfaces (ISP - Interface Segregation Principle)
+ *
+ * O código abaixo implementa corretamente **o ISP**, garantindo que cada classe implementa **apenas as interfaces necessárias**.
+ * O ISP afirma que **nenhuma classe deve ser forçada a implementar métodos que não utiliza**.
+ *
+ * 🔹 **O que foi corrigido aqui?**
+ *    - Criamos **interfaces separadas** (`AnimalCorredor`, `AnimalVoador`, `AnimalNadador`) para cada comportamento específico.
+ *    - Agora cada animal **implementa apenas as interfaces relevantes**, sem métodos desnecessários.
+ *
+ * 🔹 **Benefícios dessa abordagem:**
+ * 1️⃣ **Respeito ao ISP**  
+ *     - Se um novo tipo de animal for adicionado (ex: `Golfinho`), ele pode implementar **apenas `AnimalNadador`**, sem métodos irrelevantes.
+ *
+ * 2️⃣ **Código modular e reutilizável**  
+ *     - As interfaces são **pequenas e específicas**, permitindo maior flexibilidade.
+ *
+ * 3️⃣ **Evita métodos desnecessários**  
+ *     - Nenhum animal precisa de um método que não faz sentido para ele (ex: `Peixe` não implementa `voar()`).
+ *
+ * 🔹 **O que aconteceria sem essa estrutura?**
+ *    - Se `Animal` fosse uma única interface grande com todos os métodos (`comer()`, `correr()`, `voar()`, `nadar()`), todas as classes precisariam implementar métodos **que não fazem sentido para elas**.
+ *    - Isso tornaria o código confuso e menos flexível para futuras expansões.
+ */
+
+ // 🎯 Interface correta: Apenas habilidades específicas!
+ interface Animal {
     void comer();
 }
 

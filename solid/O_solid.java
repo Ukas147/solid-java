@@ -1,5 +1,31 @@
-// 🎯 Classe base para qualquer lanche
-abstract class Lanche {
+/**
+ * 🎯 Aplicação dos Princípios SOLID: Abstração, Herança, Polimorfismo e OCP (Open/Closed Principle)
+ *
+ * Este código implementa um sistema de pedidos de um restaurante usando **Abstração, Herança e Polimorfismo**.
+ * Ele também respeita o **Princípio Aberto/Fechado (OCP - Open/Closed Principle)**, permitindo a expansão sem modificações na classe `Restaurante`.
+ *
+ * 🔹 **Como funciona?**
+ *    - `Lanche` é uma classe **abstrata**, definindo o método `preparar()`, que será implementado por subclasses.
+ *    - Cada lanche (`Hamburguer`, `CachorroQuente`, `Pizza`, `BatataFrita`) **herda de `Lanche`** e tem seu próprio comportamento.
+ *    - O **Polimorfismo** permite que `Restaurante` aceite qualquer `Lanche`, sem precisar saber sua implementação exata.
+ *
+ * 🔹 **Benefícios dessa abordagem:**
+ * 1️⃣ **Aberto para expansão, fechado para modificação (OCP)**  
+ *     - Podemos adicionar novos lanches (`BatataFrita`, `Taco`, etc.) **sem modificar o código do Restaurante**.
+ *
+ * 2️⃣ **Código mais flexível e reutilizável**  
+ *     - `Restaurante` **não depende de tipos específicos de lanche**, tornando o sistema mais modular.
+ *
+ * 3️⃣ **Facilidade de manutenção**  
+ *     - Se um novo tipo de lanche for criado, **não precisamos modificar `Restaurante`** – basta criar uma nova classe que herde `Lanche`.
+ *
+ * 🔹 **O que aconteceria sem essa estrutura?**
+ *    - Se o restaurante dependesse diretamente de `Hamburguer`, `Pizza`, etc., teríamos que modificar a classe `Restaurante` toda vez que um novo lanche fosse adicionado.
+ *    - Isso quebraria o **OCP**, tornando o código rígido e difícil de manter.
+ */
+
+ // 🎯 Classe base para qualquer lanche
+ abstract class Lanche {
   abstract void preparar();
 }
 
