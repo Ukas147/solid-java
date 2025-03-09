@@ -30,22 +30,22 @@ class ControleXbox {
 }
 
 class VideoGame {
-  private ControleXbox controle; // ⚠️ O videogame depende diretamente de um controle específico!
+  private ControleXbox controleXbox; // ⚠️ O videogame depende diretamente de um controle específico!
 
-  VideoGame(ControleXbox controle) {
-      this.controle = controle;
+  VideoGame(ControleXbox controleXbox) {
+      this.controleXbox = controleXbox;
   }
 
   void jogar() {
-      controle.pressionarBotao();
+      controleXbox.pressionarBotao();
   }
 }
 
 // 🏡 Testando o videogame
 // public class Main {
 //     public static void main(String[] args) {
-//         ControleXbox controle = new ControleXbox();
-//         VideoGame videogame = new VideoGame(controle);
+//         ControleXbox controleXbox = new ControleXbox();
+//         VideoGame videogame = new VideoGame(controleXbox);
 //         videogame.jogar(); // Funciona só com Controle Xbox
 //     }
 // }
